@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# GitHub Pages site for rashuplasticproject.org
+Sitemap: https://rashuplasticproject.org/sitemap.xml
+
+
