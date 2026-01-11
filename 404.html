@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
+
 <body class="bg-sand-white font-body text-deep-ocean">
+    <!-- Header -->
+    <app-header></app-header>
+
     <main class="min-h-screen flex items-center justify-center px-6 text-center">
         <div>
             <img src="/assets/images/logo.png" alt="Rashu Plastic Project" class="mx-auto mb-6" style="height:64px;">
             <h1 class="font-heading text-4xl font-bold text-lagoon-teal">404 - Lost at Sea</h1>
-            <p class="mt-4 text-deep-ocean/80">The page you’re looking for doesn’t exist. Let’s head back to safer shores.</p>
+            <p class="mt-4 text-deep-ocean/80">The page you’re looking for doesn’t exist. Let’s head back to safer
+                shores.</p>
             <div class="mt-8">
                 <a href="/" class="btn-primary">Go Home</a>
             </div>
@@ -22,21 +28,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-deep-ocean text-sand-white mt-16">
-        <div class="container mx-auto px-6 py-8">
-            <div class="text-center">
-                <h3 class="font-heading text-lg font-bold text-lagoon-teal mb-4">Quick Links</h3>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="about.html" class="footer-link">About Us</a>
-                    <a href="problem.html" class="footer-link">The Problem</a>
-                    <a href="solution.html" class="footer-link">Our Solution</a>
-                    <a href="catalogue.html" class="footer-link">Collection</a>
-                    <a href="involved.html" class="footer-link">Get Involved</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <app-footer></app-footer>
+
+    <script src="/assets/js/components.js"></script>
 </body>
+
 </html>
-
-

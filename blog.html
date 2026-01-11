@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Rashu Plastic Project</title>
+    <meta name="description" content="Read the latest updates, stories and news from the Rashu Plastic Project.">
+    <link rel="canonical" href="https://rashuplasticproject.org/blog.html">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#429E9D">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog - Rashu Plastic Project">
+    <meta property="og:description" content="Read the latest updates, stories and news from the Rashu Plastic Project.">
+    <meta property="og:url" content="https://rashuplasticproject.org/blog.html">
+    <meta property="og:image" content="https://rashuplasticproject.org/assets/images/opengraph.png">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Montserrat:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="assets/js/components.js" defer></script>
+</head>
+
+<body class="bg-sand-white font-body text-deep-ocean">
+    <app-header></app-header>
+
+    <main id="main-content">
+        <section class="bg-lagoon-teal/10 py-16 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="section-title">Our Stories</h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg">Updates, events, and stories from our journey to clean up the
+                    Maldives.</p>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Post 1 -->
+                    <article
+                        class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-deep-ocean/5">
+                        <a href="blog-festive-pop-ups.html" class="block overflow-hidden h-64">
+                            <img src="assets/images/catalogue/orange_stall.png" alt="Rashu Plastic Project Stall"
+                                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="text-sm text-hermit-orange font-bold uppercase tracking-wider mb-2">Events</div>
+                            <h2 class="font-heading text-2xl font-bold mb-3"><a href="blog-festive-pop-ups.html"
+                                    class="hover:text-lagoon-teal transition-colors">Festive Pop-Up Markets at Kandima &
+                                    Nova</a></h2>
+                            <p class="text-deep-ocean/70 mb-4 flex-grow">This festive season, we were proud to be part
+                                of pop-up markets celebrating local makers and artists.</p>
+                            <a href="blog-festive-pop-ups.html"
+                                class="text-lagoon-teal font-bold hover:underline mt-auto inline-flex items-center">Read
+                                More <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <app-footer></app-footer>
+</body>
+
+</html>

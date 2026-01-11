@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rashu Plastic Project - Waste Reimagined</title>
-    <meta name="description" content="An initiative in the Maldives to combat plastic pollution by transforming waste into handcrafted artistic products, empowering the community, and protecting our oceans.">
+    <meta name="description"
+        content="An initiative in the Maldives to combat plastic pollution by transforming waste into handcrafted artistic products, empowering the community, and protecting our oceans.">
     <link rel="canonical" href="https://rashuplasticproject.org/">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#429E9D">
     <link rel="manifest" href="/site.webmanifest">
-    
+
     <!-- Open Graph -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Rashu Plastic Project - Waste Reimagined">
-    <meta property="og:description" content="An initiative in the Maldives to combat plastic pollution by transforming waste into handcrafted artistic products, empowering the community, and protecting our oceans.">
+    <meta property="og:description"
+        content="An initiative in the Maldives to combat plastic pollution by transforming waste into handcrafted artistic products, empowering the community, and protecting our oceans.">
     <meta property="og:url" content="https://rashuplasticproject.org/">
     <meta property="og:site_name" content="Rashu Plastic Project">
     <meta property="og:image" content="https://rashuplasticproject.org/assets/images/opengraph.png">
     <meta property="og:image:alt" content="A showcase of Rashu Plastic Project products displayed together">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Rashu Plastic Project - Waste Reimagined">
-    <meta name="twitter:description" content="An initiative in the Maldives to combat plastic pollution by transforming waste into handcrafted artistic products, empowering the community, and protecting our oceans.">
+    <meta name="twitter:description"
+        content="An initiative in the Maldives to combat plastic pollution by transforming waste into handcrafted artistic products, empowering the community, and protecting our oceans.">
     <meta name="twitter:image" content="https://rashuplasticproject.org/assets/images/opengraph.png">
     <meta name="twitter:image:alt" content="A showcase of Rashu Plastic Project products displayed together">
-    
+
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
@@ -34,12 +38,15 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/favicons/android-chrome-512x512.png">
-    
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Montserrat:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="assets/js/components.js" defer></script>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -59,52 +66,23 @@
     }
     </script>
 </head>
+
 <body class="bg-sand-white font-body text-deep-ocean">
     <a href="#main-content" class="skip-link">Skip to content</a>
 
     <!-- Header & Navigation -->
-    <header class="bg-sand-white/80 backdrop-blur-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="assets/images/logo.png" alt="Rashu Plastic Project Logo" class="h-12">
-                <span class="brand-title text-lagoon-teal text-xl font-bold">RASHU PLASTIC PROJECT</span>
-            </a>
-            <div class="hidden lg:flex items-center space-x-8">
-                <a href="about.html" class="nav-link">About Us</a>
-                <a href="problem.html" class="nav-link">The Problem</a>
-                <a href="solution.html" class="nav-link">Our Solution</a>
-                <a href="catalogue.html" class="nav-link">Collection</a>
-                <a href="future.html" class="nav-link">Our Future</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="hidden lg:block">
-                <a href="involved.html" class="btn-primary" id="header-cta">Get Involved</a>
-            </div>
-            <button id="mobile-menu-button" class="lg:hidden text-deep-ocean focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-sand-white py-4">
-            <a href="about.html" class="mobile-nav-link">About Us</a>
-            <a href="problem.html" class="mobile-nav-link">The Problem</a>
-            <a href="solution.html" class="mobile-nav-link">Our Solution</a>
-            <a href="catalogue.html" class="mobile-nav-link">Collection</a>
-            <a href="future.html" class="mobile-nav-link">Our Future</a>
-            <a href="contact.html" class="mobile-nav-link">Contact</a>
-            <div class="px-6 mt-4">
-                <a href="involved.html" class="btn-primary w-full text-center">Get Involved</a>
-            </div>
-        </div>
-    </header>
+    <app-header></app-header>
 
     <main id="main-content">
         <!-- Hero Section -->
         <section class="relative min-h-screen flex items-center bg-lagoon-teal/10 overflow-hidden hero-mobile">
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-8 items-center z-10">
                 <div class="text-center md:text-left hero-card">
-                    <h1 class="font-heading text-4xl md:text-6xl font-bold text-lagoon-teal tracking-wide">Giving plastic a new home.</h1>
-                    <p class="mt-4 text-lg md:text-xl text-deep-ocean leading-relaxed max-w-xl mx-auto md:mx-0">We are a Maldivian island initiative transforming plastic pollution into art, empowering our community, and fighting for a cleaner sustainable future.</p>
+                    <h1 class="font-heading text-4xl md:text-6xl font-bold text-lagoon-teal tracking-wide">Giving
+                        plastic a new home.</h1>
+                    <p class="mt-4 text-lg md:text-xl text-deep-ocean leading-relaxed max-w-xl mx-auto md:mx-0">We are a
+                        Maldivian island initiative transforming plastic pollution into art, empowering our community,
+                        and fighting for a cleaner sustainable future.</p>
                     <div class="mt-8 flex gap-4 justify-center md:justify-start">
                         <a href="solution.html" class="btn-primary" id="hero-cta-1">From Plastic to Purpose</a>
                         <a href="problem.html" class="btn-secondary">The Impact</a>
@@ -118,10 +96,12 @@
                     </div>
                 </div>
                 <div class="hidden md:block">
-                    <img src="assets/images/531701961_17848016073539285_1306919004955686180_n.jpg" alt="Hand holding recycled plastic fish keychain with tropical palms and sea in background" class="mx-auto w-full max-w-lg rounded-xl shadow-lg">
+                    <img src="assets/images/531701961_17848016073539285_1306919004955686180_n.jpg"
+                        alt="Hand holding recycled plastic fish keychain with tropical palms and sea in background"
+                        class="mx-auto w-full max-w-lg rounded-xl shadow-lg">
                 </div>
             </div>
-            
+
         </section>
 
         <!-- Featured Collection Showcase (image + text card) -->
@@ -129,12 +109,16 @@
             <div class="container mx-auto px-6">
                 <div class="featured-showcase">
                     <div class="featured-image-wrap">
-                        <img src="assets/images/IMG_3089.JPG" alt="A showcase of Rashu Plastic Project products displayed together" class="featured-image" loading="lazy" decoding="async">
+                        <img src="assets/images/IMG_3089.JPG"
+                            alt="A showcase of Rashu Plastic Project products displayed together" class="featured-image"
+                            loading="lazy" decoding="async">
                     </div>
                     <div class="featured-text-card">
                         <h3 class="font-heading text-3xl md:text-4xl font-bold">Crafted from Recycled Plastic</h3>
-                        <p class="mt-3 text-lg leading-relaxed">Every piece is handmade on our island, turning what was once waste into something
-                            meaningful. Every creation is unique, explore the full collection and find your favourite.</p>
+                        <p class="mt-3 text-lg leading-relaxed">Every piece is handmade on our island, turning what was
+                            once waste into something
+                            meaningful. Every creation is unique, explore the full collection and find your favourite.
+                        </p>
                         <div class="mt-6">
                             <a href="solution.html" class="btn-primary">Browse the Collection</a>
                         </div>
@@ -147,19 +131,23 @@
         <section class="py-16 md:py-24 bg-sand-white">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-title">Our Mission</h2>
-                <p class="mt-6 text-lg md:text-xl text-deep-ocean/90 max-w-3xl mx-auto leading-relaxed">Our mission is to be the first local island in the Maldives that recycles 100% of our plastic waste.</p>
+                <p class="mt-6 text-lg md:text-xl text-deep-ocean/90 max-w-3xl mx-auto leading-relaxed">Our mission is
+                    to be the first local island in the Maldives that recycles 100% of our plastic waste.</p>
                 <div class="mt-12 grid md:grid-cols-3 gap-10">
                     <div class="mission-card">
                         <h3 class="card-title text-hermit-orange">Environmental Impact</h3>
-                        <p class="mt-2">Launch the inaugural recycling initiative on our island to minimise plastic pollution, reduce waste burning, and protect our precious marine ecosystem.</p>
+                        <p class="mt-2">Launch the inaugural recycling initiative on our island to minimise plastic
+                            pollution, reduce waste burning, and protect our precious marine ecosystem.</p>
                     </div>
                     <div class="mission-card">
                         <h3 class="card-title text-hermit-orange">Circular Economy</h3>
-                        <p class="mt-2">By transforming pollution into meaningful, handcrafted products, we promote resource reuse, benefiting both the environment and local communities.</p>
+                        <p class="mt-2">By transforming pollution into meaningful, handcrafted products, we promote
+                            resource reuse, benefiting both the environment and local communities.</p>
                     </div>
                     <div class="mission-card">
                         <h3 class="card-title text-hermit-orange">Community Empowerment</h3>
-                        <p class="mt-2">Empower islanders, schoolchildren, and visitors through educational training on recycling and advocating for the health of our oceans.</p>
+                        <p class="mt-2">Empower islanders, schoolchildren, and visitors through educational training on
+                            recycling and advocating for the health of our oceans.</p>
                     </div>
                 </div>
             </div>
@@ -170,7 +158,8 @@
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1">
                     <h2 class="section-title text-left">A Plastic Problem in Paradise</h2>
-                    <p class="mt-4 text-lg leading-relaxed">The Maldives faces an urgent and growing challenge from plastic pollution, threatening
+                    <p class="mt-4 text-lg leading-relaxed">The Maldives faces an urgent and growing challenge from
+                        plastic pollution, threatening
                         people's health, the marine ecosystem and tourism. A significant portion of waste originates
                         from items such as plastic drinking bottles, cosmetics and food packaging, while ocean currents
                         wash in even more from overseas.</p>
@@ -181,43 +170,102 @@
                     </div>
                 </div>
                 <div class="order-1 md:order-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Thilafushi_Aerial_-_panoramio.jpg" alt="Aerial view of Thilafushi, the 'Trash Island' in the Maldives, showing the scale of waste accumulation" class="rounded-xl shadow-lg" loading="lazy" decoding="async">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Thilafushi_Aerial_-_panoramio.jpg"
+                        alt="Aerial view of Thilafushi, the 'Trash Island' in the Maldives, showing the scale of waste accumulation"
+                        class="rounded-xl shadow-lg" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
-        
+
         <!-- Solution Snippet -->
         <section class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="solution-intro text-center">
                     <h2 class="section-title">Waste Reimagined</h2>
-                    <p class="solution-lead">We collect and recycle HDPE plastic, such as bottle tops, cosmetics and detergent bottles — carefully cleaned, sorted and shredded — before handcrafting them into unique, ocean‑inspired pieces.</p>
+                    <p class="solution-lead">We collect and recycle HDPE plastic, such as bottle tops, cosmetics and
+                        detergent bottles — carefully cleaned, sorted and shredded — before handcrafting them into
+                        unique, ocean‑inspired pieces.</p>
                 </div>
                 <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="product-card solution-card">
-                        <img src="assets/images/IMG_2428.jpg" alt="Handcrafted recycled plastic earrings in ocean hues" class="product-card-img" loading="lazy" decoding="async">
+                        <img src="assets/images/IMG_2428.jpg" alt="Handcrafted recycled plastic earrings in ocean hues"
+                            class="product-card-img" loading="lazy" decoding="async">
                         <div class="solution-card-body">
                             <h3 class="card-title">Handcrafted Jewellery</h3>
                             <p>Unique pieces that tell a story of conservation.</p>
                         </div>
                     </div>
                     <div class="product-card solution-card">
-                        <img src="assets/images/keychains.jpg" alt="Colorful recycled plastic keychains" class="product-card-img" loading="lazy" decoding="async">
+                        <img src="assets/images/keychains.jpg" alt="Colorful recycled plastic keychains"
+                            class="product-card-img" loading="lazy" decoding="async">
                         <div class="solution-card-body">
                             <h3 class="card-title">Artistic Keychains</h3>
                             <p>Carry our mission with you everywhere.</p>
                         </div>
                     </div>
                     <div class="product-card solution-card">
-                        <img src="assets/images/custom_creation.jpg" alt="A selection of recycled plastic creations" class="product-card-img" loading="lazy" decoding="async">
+                        <img src="assets/images/custom_creation.jpg" alt="A selection of recycled plastic creations"
+                            class="product-card-img" loading="lazy" decoding="async">
                         <div class="solution-card-body">
                             <h3 class="card-title">Custom Creations</h3>
                             <p>We bring custom ideas to life using recycled materials.</p>
                         </div>
                     </div>
                 </div>
-                 <div class="mt-12 text-center">
+                <div class="mt-12 text-center">
                     <a href="solution.html" class="btn-primary" id="hero-cta-2">See Our Collection</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- In the News Section -->
+        <section class="news-section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-center">In the News</h2>
+                <div class="news-grid mt-12">
+                    <!-- Article 1 -->
+                    <a href="https://edition.mv/features/44819" target="_blank" rel="noopener noreferrer"
+                        class="news-card">
+                        <span class="news-source">Edition.mv</span>
+                        <h3 class="news-title">Pretty in Plastic: Rashu Plastic Project</h3>
+                        <p class="news-excerpt">From trash to treasure: How we're expanding horizons and transforming
+                            the way our island sees waste.</p>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <a href="https://www.plus.mv/lifestyle/how-rashu-plastic-project-is-turning-waste-into-wearable-art/"
+                        target="_blank" rel="noopener noreferrer" class="news-card">
+                        <span class="news-source">MV+</span>
+                        <h3 class="news-title">Turning Waste into Wearable Art</h3>
+                        <p class="news-excerpt">An in-depth look at how we transform discarded plastic into meaningful,
+                            handcrafted souvenirs.</p>
+                    </a>
+
+                    <!-- Article 3 -->
+                    <a href="https://archive.mv/en/articles/eE3rMJ" target="_blank" rel="noopener noreferrer"
+                        class="news-card">
+                        <span class="news-source">Archive MV</span>
+                        <h3 class="news-title">BML Startup Grant 2025 Winners</h3>
+                        <p class="news-excerpt">Rashu Plastic Project selected as a recipient of the prestigious Bank of
+                            Maldives Startup Grant 2025.</p>
+                    </a>
+
+                    <!-- Article 4 -->
+                    <a href="https://sun.mv/215452" target="_blank" rel="noopener noreferrer" class="news-card">
+                        <span class="news-source">Sun Online</span>
+                        <h3 class="news-title">Community Fund Winner</h3>
+                        <p class="news-excerpt">Awarded for our initiative to create sustainable community spaces and
+                            empower local islanders.</p>
+                    </a>
+
+                    <!-- Article 5 -->
+                    <a href="https://dho.mv/lifestyle/150247" target="_blank" rel="noopener noreferrer"
+                        class="news-card">
+                        <span class="news-source">Dho?</span>
+                        <h3 class="news-title">The Hermit Crab's Shell</h3>
+                        <p class="news-excerpt">The story of how a small plastic shell inspired a movement and started
+                            it all.</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -227,11 +275,14 @@
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-title">Trusted by Our Community</h2>
                 <blockquote class="mt-8 max-w-3xl mx-auto">
-                    <p class="text-xl italic text-deep-ocean/80">"The passion behind the Rashu Plastic Project is inspiring. Their work is not only creating beautiful art but making a tangible difference for our island's future."</p>
+                    <p class="text-xl italic text-deep-ocean/80">"The passion behind the Rashu Plastic Project is
+                        inspiring. Their work is not only creating beautiful art but making a tangible difference for
+                        our island's future."</p>
                     <cite class="mt-4 block font-bold not-italic text-hermit-orange">— Local Guest House Owner</cite>
                 </blockquote>
                 <div class="mt-8">
-                    <a href="https://instagram.com/rashuplasticproject" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Follow us on Instagram">Follow us on Instagram</a>
+                    <a href="https://instagram.com/rashuplasticproject" target="_blank" rel="noopener noreferrer"
+                        class="btn-primary" aria-label="Follow us on Instagram">Follow us on Instagram</a>
                 </div>
 
             </div>
@@ -240,146 +291,96 @@
         <!-- Call to Action -->
         <section class="bg-hermit-orange text-white relative">
             <div class="absolute top-0 left-0 w-full wavy-divider flipped" aria-hidden="true">
-                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none" style="display: block;"><path d="M0,50 C480,150 960,-50 1440,50 L1440,0 L0,0 Z" style="fill:#F8F6F2; stroke:none;"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none"
+                    style="display: block;">
+                    <path d="M0,50 C480,150 960,-50 1440,50 L1440,0 L0,0 Z" style="fill:#F8F6F2; stroke:none;"></path>
+                </svg>
             </div>
             <div class="container mx-auto px-6 py-20 text-center relative z-10">
                 <h2 class="font-heading text-4xl font-bold">Ready to Make a Difference?</h2>
-                <p class="mt-4 text-lg max-w-2xl mx-auto">Your support helps us upgrade equipment, expand workshops, and move closer to a 100% recycled plastic island. Join us in protecting paradise.</p>
+                <p class="mt-4 text-lg max-w-2xl mx-auto">Your support helps us upgrade equipment, expand workshops, and
+                    move closer to a 100% recycled plastic island. Join us in protecting paradise.</p>
                 <div class="mt-8">
-                    <a href="involved.html" class="bg-sand-white text-hermit-orange font-body font-bold rounded-lg shadow-md hover:bg-opacity-90 transform hover:-translate-y-1 transition-all duration-300 btn-cta-lg" id="footer-cta">Support Our Cause</a>
+                    <a href="involved.html"
+                        class="bg-sand-white text-hermit-orange font-body font-bold rounded-lg shadow-md hover:bg-opacity-90 transform hover:-translate-y-1 transition-all duration-300 btn-cta-lg"
+                        id="footer-cta">Support Our Cause</a>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-deep-ocean text-sand-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-brand mb-3">
-                        <img src="assets/images/logo.png" alt="Rashu Plastic Project Logo">
-                        <h3 class="brand-title text-xl font-bold text-lagoon-teal">RASHU PLASTIC PROJECT</h3>
-                    </div>
-                    <p class="mt-2 text-sand-white/80">Giving plastic a new home,
-not the wildlife.</p>
-                </div>
-                <div>
-                    <h3 class="font-heading text-xl font-bold text-lagoon-teal footer-column-title">Quick Links</h3>
-                    <ul class="space-y-1">
-                        <li><a href="about.html" class="footer-link">About Us</a></li>
-                        <li><a href="problem.html" class="footer-link">The Problem</a></li>
-                        <li><a href="solution.html" class="footer-link">Our Solution</a></li>
-                        <li><a href="catalogue.html" class="footer-link">Collection</a></li>
-                        <li><a href="involved.html" class="footer-link">Get Involved</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-heading text-xl font-bold text-lagoon-teal footer-column-title">Connect With Us</h3>
-                    <p class="text-sand-white/80">Follow our journey or get in touch directly.</p>
-                    <div class="mt-4 flex gap-4">
-                        <a href="https://instagram.com/rashuplasticproject" target="_blank" rel="noopener noreferrer" class="instagram-link" aria-label="Follow us on Instagram">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
-                        <a href="contact.html" class="btn-secondary">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-10 footer-bottom">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> Rashu Plastic Project. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <app-footer></app-footer>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // --- Mobile Menu ---
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuButton.addEventListener('click', () => {
-            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-            mobileMenu.classList.toggle('hidden');
-            menuButton.setAttribute('aria-expanded', !isExpanded);
-        });
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Impact Counter Animation ---
+            const counter = document.getElementById('impact-counter');
+            if (counter) {
+                const target = 19.7; // Target kg of plastic
+                let current = 0;
+                const increment = target / 100;
+                const interval = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(interval);
+                    }
+                    counter.textContent = current.toFixed(1);
+                }, 20);
+            }
 
-        // --- Impact Counter Animation ---
-        const counter = document.getElementById('impact-counter');
-        if (counter) {
-            const target = 15.7; // Target kg of plastic
-            let current = 0;
-            const increment = target / 100;
-            const interval = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(interval);
+            // --- Bottle Cap Confetti ---
+            const confettiButtons = ['header-cta', 'hero-cta-1', 'hero-cta-2', 'footer-cta'];
+            const confettiColors = ['#429E9D', '#E56B37', '#2A3D45', '#D2B48C'];
+
+            const createConfetti = (e) => {
+                for (let i = 0; i < 15; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti-cap');
+
+                    const randomColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                    const randomX = (Math.random() - 0.5) * 200 + 'px';
+                    const randomY = (Math.random() - 0.5) * 200 + 'px';
+
+                    confetti.style.setProperty('--confetti-color', randomColor);
+                    confetti.style.setProperty('--tx', randomX);
+                    confetti.style.setProperty('--ty', randomY);
+
+                    confetti.style.left = e.offsetX + 'px';
+                    confetti.style.top = e.offsetY + 'px';
+
+                    e.target.appendChild(confetti);
+
+                    setTimeout(() => confetti.remove(), 800);
                 }
-                counter.textContent = current.toFixed(1);
-            }, 20);
-        }
+            };
 
-        // --- Bottle Cap Confetti ---
-        const confettiButtons = ['header-cta', 'hero-cta-1', 'hero-cta-2', 'footer-cta'];
-        const confettiColors = ['#429E9D', '#E56B37', '#2A3D45', '#D2B48C'];
+            // Using event delegation for lighter DOM access or waiting for elements?
+            // Since we defer execution, elements might be there.
+            // If header-cta is in app-header, we need to bind to it.
+            // But if it's not yet in the DOM (because upgrade hasn't finished), this might fail.
+            // Safe approach: Delegate or checking.
 
-        const createConfetti = (e) => {
-            for (let i = 0; i < 15; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti-cap');
-                
-                const randomColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
-                const randomX = (Math.random() - 0.5) * 200 + 'px';
-                const randomY = (Math.random() - 0.5) * 200 + 'px';
+            // However, since components.js is defer, and this script is inline (and thus parser-blocking if not using defer/module, but it is effectively deferred by being at the bottom), it might run before the custom element upgrade puts content in.
+            // Actually, custom element upgrade is synchronous if defined.
+            // But we can delegate the click to the document body to be safe, or wait.
+            // Let's try simple delegation for confetti.
 
-                confetti.style.setProperty('--confetti-color', randomColor);
-                confetti.style.setProperty('--tx', randomX);
-                confetti.style.setProperty('--ty', randomY);
-                
-                confetti.style.left = e.offsetX + 'px';
-                confetti.style.top = e.offsetY + 'px';
-
-                e.target.appendChild(confetti);
-
-                setTimeout(() => confetti.remove(), 800);
-            }
-        };
-
-        confettiButtons.forEach(id => {
-            const button = document.getElementById(id);
-            if (button) {
-                button.addEventListener('click', createConfetti);
-            }
-        });
-
-        // --- Hide header when hero is in view on mobile ---
-        const headerEl = document.querySelector('header');
-        const heroSection = document.querySelector('.hero-mobile');
-        if (headerEl && heroSection) {
-            const observer = new IntersectionObserver((entries) => {
-                const isMobile = window.matchMedia('(max-width: 767px)').matches;
-                entries.forEach(entry => {
-                    if (!isMobile) {
-                        headerEl.classList.remove('header-hidden');
-                        return;
+            document.body.addEventListener('click', function (e) {
+                const targetId = e.target.id;
+                if (confettiButtons.includes(targetId) || confettiButtons.includes(e.target.closest('a')?.id)) {
+                    // Check if it's one of our buttons
+                    // Note: e.target might be the span inside, or the image. 
+                    // We need to look up.
+                    let btn = e.target.closest('a') || e.target;
+                    if (btn && confettiButtons.includes(btn.id)) {
+                        createConfetti(e);
                     }
-                    if (entry.isIntersecting) {
-                        headerEl.classList.add('header-hidden');
-                    } else {
-                        headerEl.classList.remove('header-hidden');
-                    }
-                });
-            }, { threshold: 0.4 });
-            observer.observe(heroSection);
-
-            // Keep behavior responsive on resize
-            window.addEventListener('resize', () => {
-                const isMobile = window.matchMedia('(max-width: 767px)').matches;
-                if (!isMobile) headerEl.classList.remove('header-hidden');
+                }
             });
-        }
-    });
+        });
     </script>
 </body>
+
 </html>
