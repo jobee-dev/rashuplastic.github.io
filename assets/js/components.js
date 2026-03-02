@@ -12,13 +12,40 @@ class AppHeader extends HTMLElement {
                     <span class="brand-title text-lagoon-teal text-xl font-bold">RASHU PLASTIC PROJECT</span>
                 </a>
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="about.html" class="nav-link">About Us</a>
-                    <a href="problem.html" class="nav-link">The Problem</a>
-                    <a href="solution.html" class="nav-link">Our Solution</a>
-                    <a href="catalogue.html" class="nav-link">Collection</a>
-                    <a href="blog.html" class="nav-link">Blog</a>
-                    <a href="future.html" class="nav-link">Our Future</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <div class="nav-dropdown">
+                        <button class="nav-dropdown-trigger">About Us 
+                            <svg class="nav-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="about.html">Our Story</a>
+                            <a href="collaborations.html">Collaborations</a>
+                            <a href="future.html">Our Future</a>
+                            <a href="faq.html">FAQs</a>
+                            <a href="blog.html">Blog</a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-dropdown">
+                        <button class="nav-dropdown-trigger">About Plastic
+                            <svg class="nav-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="problem.html">The Problem</a>
+                            <a href="solution.html">Our Solution</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-dropdown">
+                        <button class="nav-dropdown-trigger">Programs & Products
+                            <svg class="nav-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="nav-dropdown-menu">
+                            <a href="catalogue.html">Rashu Creations</a>
+                            <a href="experiences.html">Plastic Experiences</a>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="nav-link">Contact Us</a>
                 </div>
                 <div class="hidden lg:block">
                     <a href="involved.html" class="btn-primary" id="header-cta">Get Involved</a>
@@ -34,13 +61,40 @@ class AppHeader extends HTMLElement {
             </nav>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden lg:hidden bg-sand-white py-4">
-                <a href="about.html" class="mobile-nav-link">About Us</a>
-                <a href="problem.html" class="mobile-nav-link">The Problem</a>
-                <a href="solution.html" class="mobile-nav-link">Our Solution</a>
-                <a href="catalogue.html" class="mobile-nav-link">Collection</a>
-                <a href="blog.html" class="mobile-nav-link">Blog</a>
-                <a href="future.html" class="mobile-nav-link">Our Future</a>
-                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <div>
+                    <button class="mobile-dropdown-trigger">About Us
+                        <svg class="mobile-dd-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="about.html">Our Story</a>
+                        <a href="collaborations.html">Collaborations</a>
+                        <a href="future.html">Our Future</a>
+                        <a href="faq.html">FAQs</a>
+                        <a href="blog.html">Blog</a>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="mobile-dropdown-trigger">About Plastic
+                        <svg class="mobile-dd-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="problem.html">The Problem</a>
+                        <a href="solution.html">Our Solution</a>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="mobile-dropdown-trigger">Programs & Products
+                        <svg class="mobile-dd-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="catalogue.html">Rashu Creations</a>
+                        <a href="experiences.html">Plastic Experiences</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="mobile-nav-link">Contact Us</a>
                 <div class="px-6 mt-4">
                     <a href="involved.html" class="btn-primary w-full text-center">Get Involved</a>
                 </div>
@@ -73,6 +127,7 @@ class AppHeader extends HTMLElement {
     }
 
     initMobileMenu() {
+        // Mobile menu toggle
         const menuButton = this.querySelector('#mobile-menu-button');
         const mobileMenu = this.querySelector('#mobile-menu');
 
@@ -83,6 +138,19 @@ class AppHeader extends HTMLElement {
                 menuButton.setAttribute('aria-expanded', !isExpanded);
             });
         }
+
+        // Mobile dropdown toggles
+        const dropdownTriggers = this.querySelectorAll('.mobile-dropdown-trigger');
+        dropdownTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                // Toggle the current dropdown
+                trigger.classList.toggle('open');
+                const content = trigger.nextElementSibling;
+                if (content && content.classList.contains('mobile-dropdown-content')) {
+                    content.classList.toggle('open');
+                }
+            });
+        });
     }
 
     initScrollEffect() {
@@ -139,10 +207,11 @@ class AppFooter extends HTMLElement {
                         <h3 class="font-heading text-xl font-bold text-lagoon-teal footer-column-title">Quick Links</h3>
                         <ul class="space-y-1">
                             <li><a href="about.html" class="footer-link">About Us</a></li>
-                            <li><a href="problem.html" class="footer-link">The Problem</a></li>
-                            <li><a href="solution.html" class="footer-link">Our Solution</a></li>
-                            <li><a href="catalogue.html" class="footer-link">Collection</a></li>
-                            <li><a href="involved.html" class="footer-link">Get Involved</a></li>
+                            <li><a href="problem.html" class="footer-link">About Plastic</a></li>
+                            <li><a href="catalogue.html" class="footer-link">Rashu Creations</a></li>
+                            <li><a href="experiences.html" class="footer-link">Plastic Experiences</a></li>
+                            <li><a href="collaborations.html" class="footer-link">Collaborations</a></li>
+                            <li><a href="faq.html" class="footer-link">FAQs</a></li>
                         </ul>
                     </div>
                     <div>

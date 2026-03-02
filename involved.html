@@ -56,52 +56,14 @@
       "url": "https://rashuplasticproject.org/involved.html"
     }
     </script>
+    <script src="assets/js/components.js" defer></script>
 </head>
 
 <body class="bg-sand-white font-body text-deep-ocean">
     <a href="#main-content" class="skip-link">Skip to content</a>
 
     <!-- Header & Navigation -->
-    <header class="bg-sand-white/80 backdrop-blur-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="assets/images/logo.png" alt="Rashu Plastic Project Logo" class="h-12">
-                <span class="brand-title text-lagoon-teal text-xl font-bold">RASHU PLASTIC PROJECT</span>
-            </a>
-            <div class="hidden lg:flex items-center space-x-8">
-                <a href="about.html" class="nav-link">About Us</a>
-                <a href="problem.html" class="nav-link">The Problem</a>
-                <a href="solution.html" class="nav-link">Our Solution</a>
-                <a href="catalogue.html" class="nav-link">Collection</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="future.html" class="nav-link">Our Future</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="hidden lg:block">
-                <a href="involved.html" class="btn-primary">Get Involved</a>
-            </div>
-            <button id="mobile-menu-button" class="lg:hidden text-deep-ocean focus:outline-none"
-                aria-controls="mobile-menu" aria-expanded="false">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 D4 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4">
-                    </path>
-                </svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-sand-white py-4">
-            <a href="about.html" class="mobile-nav-link">About Us</a>
-            <a href="problem.html" class="mobile-nav-link">The Problem</a>
-            <a href="solution.html" class="mobile-nav-link">Our Solution</a>
-            <a href="catalogue.html" class="mobile-nav-link">Collection</a>
-            <a href="future.html" class="mobile-nav-link">Our Future</a>
-            <a href="contact.html" class="mobile-nav-link">Contact</a>
-            <div class="px-6 mt-4">
-                <a href="involved.html" class="btn-primary w-full text-center">Get Involved</a>
-            </div>
-        </div>
-    </header>
+    <app-header></app-header>
 
     <main id="main-content">
         <!-- Page Header -->
@@ -132,31 +94,54 @@
             </div>
         </section>
 
-        <!-- Workshops Section -->
+        <!-- NGO Partnership Section -->
         <section class="py-16 md:py-20 bg-lagoon-teal/5">
             <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="section-title text-left">Educational Workshops</h2>
-                        <p class="mt-4 text-lg leading-relaxed text-deep-ocean/80">We believe in the power of education
-                            and hands-on experience. We offer interactive workshops for:</p>
-                        <ul class="mt-4 space-y-2 list-disc list-inside text-deep-ocean/80 text-lg">
-                            <li><strong>School Groups:</strong> Inspiring the next generation of eco-warriors.</li>
-                            <li><strong>Children:</strong> Fun, engaging sessions making keychains.</li>
-                            <li><strong>Adults & Tourists:</strong> Jewellery making classes (earrings, bracelets,
-                                necklaces).</li>
-                            <li><strong>Community Groups:</strong> Learning the basics of plastic recycling.</li>
-                        </ul>
-                        <p class="mt-6 text-lg leading-relaxed text-deep-ocean/80">We are mobile and able to travel
-                            anywhere in the Maldives to conduct these sessions. Costs can be discussed based on location
-                            and group size.</p>
-                        <div class="mt-8">
-                            <a href="contact.html" class="btn-secondary">Book a Workshop</a>
+                <div class="ngo-initiative-card shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-hermit-orange/10 rounded-full -mr-16 -mt-16"></div>
+                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-lagoon-teal/10 rounded-full -ml-12 -mb-12"></div>
+
+                    <div class="relative z-10">
+                        <span class="ngo-initiative-badge">2026 NGO Initiative</span>
+                        <h2 class="font-heading text-3xl md:text-4xl font-bold text-lagoon-teal mb-4">Supporting
+                            Community Action</h2>
+                        <p class="text-lg text-deep-ocean/90 mb-6 font-medium">Partnership with local NGOs — combining
+                            our project values to support community action and a better environment for all.</p>
+
+                        <div class="grid md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto mt-10">
+                            <div class="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-white/50 shadow-sm">
+                                <h3 class="font-bold text-hermit-orange text-xl mb-3 flex items-center">
+                                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Every Six Months
+                                </h3>
+                                <p class="text-deep-ocean/80">We partner with a different NGO across the Maldives and
+                                    select one of our products. A donation of the profits from this product goes
+                                    directly towards their initiative.</p>
+                            </div>
+
+                            <div class="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-white/50 shadow-sm">
+                                <h3 class="font-bold text-hermit-orange text-xl mb-3 flex items-center">
+                                    <svg class="w-6 h-6 mr-2 outline-none" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                        </path>
+                                    </svg>
+                                    Zoophilist Maldives
+                                </h3>
+                                <p class="text-deep-ocean/80">For the start of 2026 we have chosen <strong
+                                        class="text-deep-ocean">Zoophilist Maldives</strong>, an NGO that helps feed,
+                                    care for and protect stray cats across the Maldives.</p>
+                                <div
+                                    class="mt-4 p-3 bg-hermit-orange/10 rounded-lg shadow-sm border border-hermit-orange/20">
+                                    <p class="font-bold text-hermit-orange text-center">For every cat keychain sold, we
+                                        donate 40 MVR directly to helping the cats.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="relative h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-                        <img src="assets/images/newImgs/kids-workshop-plastic-sorting.jpg" alt="Children participating in a plastic sorting workshop"
-                            class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -166,17 +151,27 @@
         <section class="py-16 md:py-20">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Card 1: Financial Support -->
+                    <!-- Card 1: Purchase -->
+                    <div class="mission-card text-center">
+                        <h3 class="card-title text-hermit-orange">Our Collection</h3>
+                        <p class="mt-2">Support our work directly by purchasing our handmade recycled products. Every
+                            purchase helps reduce plastic waste.</p>
+                        <a href="catalogue.html"
+                            class="inline-block mt-4 text-lagoon-teal font-bold hover:underline">View Collection</a>
+                    </div>
+                    <!-- Card 2: Financial Support -->
                     <div class="mission-card text-center">
                         <h3 class="card-title text-hermit-orange">Financial Support</h3>
                         <p class="mt-2">Provide vital financial support for new equipment, machinery, and daily
-                            operational expenses that keep our project running and growing.</p>
+                            operational expenses that keep our project running.</p>
                     </div>
-                    <!-- Card 2: Collaborate -->
+                    <!-- Card 3: Collaborate -->
                     <div class="mission-card text-center">
                         <h3 class="card-title text-hermit-orange">Collaborate With Us</h3>
                         <p class="mt-2">Partner with us to organize and execute impactful community events, from beach
                             clean-ups to local awareness campaigns.</p>
+                        <a href="collaborations.html"
+                            class="inline-block mt-4 text-lagoon-teal font-bold hover:underline">View Partnerships</a>
                     </div>
                     <!-- Card 3: Training -->
                     <div class="mission-card text-center">
@@ -229,64 +224,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-deep-ocean text-sand-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-brand mb-3">
-                        <img src="assets/images/logo.png" alt="Rashu Plastic Project Logo">
-                        <h3 class="brand-title text-xl font-bold text-lagoon-teal">RASHU PLASTIC PROJECT</h3>
-                    </div>
-                    <p class="mt-2 text-sand-white/80">Giving plastic a new home,
-                        not the wildlife.</p>
-                </div>
-                <div>
-                    <h3 class="font-heading text-xl font-bold text-lagoon-teal footer-column-title">Quick Links</h3>
-                    <ul class="space-y-1">
-                        <li><a href="about.html" class="footer-link">About Us</a></li>
-                        <li><a href="problem.html" class="footer-link">The Problem</a></li>
-                        <li><a href="solution.html" class="footer-link">Our Solution</a></li>
-                        <li><a href="catalogue.html" class="footer-link">Collection</a></li>
-                        <li><a href="involved.html" class="footer-link">Get Involved</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-heading text-xl font-bold text-lagoon-teal footer-column-title">Connect With Us</h3>
-                    <p class="text-sand-white/80">Follow our journey or get in touch directly.</p>
-                    <div class="mt-4 flex gap-4">
-                        <a href="https://instagram.com/rashuplasticproject" target="_blank" rel="noopener noreferrer"
-                            class="instagram-link" aria-label="Follow us on Instagram">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                        </a>
-                        <a href="contact.html" class="btn-secondary">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-10 footer-bottom">
-                <p>&copy;
-                    <script>document.write(new Date().getFullYear())</script> Rashu Plastic Project. All Rights
-                    Reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
+    <app-footer></app-footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // --- Mobile Menu ---
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            menuButton.addEventListener('click', () => {
-                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-                mobileMenu.classList.toggle('hidden');
-                menuButton.setAttribute('aria-expanded', !isExpanded);
-            });
-        });
-    </script>
+
 </body>
 
 </html>
