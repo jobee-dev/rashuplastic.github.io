@@ -12,11 +12,11 @@ class AppHeader extends HTMLElement {
                     <span class="brand-title text-lagoon-teal text-xl font-bold">RASHU PLASTIC PROJECT</span>
                 </a>
                 <div class="hidden lg:flex items-center space-x-8">
-                    <div class="nav-dropdown">
-                        <button class="nav-dropdown-trigger">About Us 
-                            <svg class="nav-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="nav-dropdown-menu">
+                    <div class="nav-item">
+                        <span class="nav-link nav-item-trigger">About Us 
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                        <div class="dropdown-menu">
                             <a href="about.html">Our Story</a>
                             <a href="collaborations.html">Collaborations</a>
                             <a href="future.html">Our Future</a>
@@ -25,21 +25,21 @@ class AppHeader extends HTMLElement {
                         </div>
                     </div>
                     
-                    <div class="nav-dropdown">
-                        <button class="nav-dropdown-trigger">About Plastic
-                            <svg class="nav-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="nav-dropdown-menu">
+                    <div class="nav-item">
+                        <span class="nav-link nav-item-trigger">About Plastic
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                        <div class="dropdown-menu">
                             <a href="problem.html">The Problem</a>
                             <a href="solution.html">Our Solution</a>
                         </div>
                     </div>
 
-                    <div class="nav-dropdown">
-                        <button class="nav-dropdown-trigger">Programs & Products
-                            <svg class="nav-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="nav-dropdown-menu">
+                    <div class="nav-item">
+                        <span class="nav-link nav-item-trigger">Programs & Products
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                        <div class="dropdown-menu">
                             <a href="catalogue.html">Rashu Creations</a>
                             <a href="experiences.html">Plastic Experiences</a>
                         </div>
