@@ -37,13 +37,13 @@
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/favicons/android-chrome-512x512.png">
 
-    <link rel="stylesheet" href="assets/css/style.css?v=4">
+    <link rel="stylesheet" href="assets/css/style.css?v=6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Montserrat:wght@400;500;700&display=swap"
         rel="stylesheet">
-    <script src="assets/js/components.js?v=4?v=2" defer></script>
+    <script src="assets/js/components.js?v=6?v=2" defer></script>
 
 </head>
 
@@ -348,17 +348,16 @@
                         </ul>
                     </div>
 
-                    <div class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-deep-ocean/10">
-                        <h3
-                            class="font-heading text-2xl font-bold mb-5 text-lagoon-teal border-b border-deep-ocean/10 pb-4">
+                    <div class="mt-8 md:mt-0">
+                        <h3 class="font-heading text-2xl font-bold mb-4 text-lagoon-teal">
                             Why it matters</h3>
-                        <p class="mb-5 text-deep-ocean/90 leading-relaxed">The Maldives faces serious challenges with
+                        <p class="mb-4 text-deep-ocean/80 leading-relaxed">The Maldives faces serious challenges with
                             plastic waste management. Many islands lack advanced recycling systems, and much plastic is
                             burned or transported long distances.</p>
-                        <p class="mb-6 text-deep-ocean/90 leading-relaxed font-medium">Our workshops demonstrate that
+                        <p class="mb-6 text-deep-ocean/80 leading-relaxed">Our workshops demonstrate that
                             small-scale solutions are possible. Local action matters. Waste can be transformed.</p>
                         <blockquote
-                            class="italic text-lg text-lagoon-teal font-medium border-l-4 border-hermit-orange pl-4 py-1">
+                            class="italic text-lg text-deep-ocean font-medium border-l-2 border-hermit-orange pl-4 py-1">
                             "When you join a Rashu workshop, you're not just making something, you're contributing to a
                             growing circular movement in island communities."
                         </blockquote>
@@ -379,21 +378,22 @@
                     supply. No previous experience needed.
                 </p>
 
-                <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12">
-                    <div
-                        class="bg-white p-6 rounded-xl shadow-sm border border-deep-ocean/5 flex flex-col items-center justify-center">
-                        <svg class="w-8 h-8 text-hermit-orange mb-3" fill="none" stroke="currentColor"
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mb-10">
+                    <div class="flex items-center text-deep-ocean group">
+                        <svg style="width: 20px; height: 20px; flex-shrink: 0;"
+                            class="text-hermit-orange mr-3 opacity-80" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                             </path>
                         </svg>
                         <a href="mailto:rashuplasticproject@gmail.com"
-                            class="text-deep-ocean font-medium hover:text-lagoon-teal transition-colors break-all">rashuplasticproject@gmail.com</a>
+                            class="font-medium hover:text-lagoon-teal transition-colors break-all">rashuplasticproject@gmail.com</a>
                     </div>
-                    <div
-                        class="bg-white p-6 rounded-xl shadow-sm border border-deep-ocean/5 flex flex-col items-center justify-center">
-                        <svg class="w-8 h-8 text-hermit-orange mb-3" fill="none" stroke="currentColor"
+                    <div class="hidden sm:block bg-deep-ocean/10" style="width: 1px; height: 24px;"></div>
+                    <div class="flex items-center text-deep-ocean group">
+                        <svg style="width: 20px; height: 20px; flex-shrink: 0;"
+                            class="text-hermit-orange mr-3 opacity-80" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                 d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
@@ -401,13 +401,15 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
-                        <span class="text-deep-ocean font-medium">Vaavu Atoll, Maldives</span>
+                        <span class="font-medium">Vaavu Atoll, Maldives</span>
                     </div>
                 </div>
 
-                <a href="contact.html" class="btn-primary inline-flex items-center gap-2 text-lg px-8 py-3">
+                <a href="contact.html" class="btn-primary inline-flex items-center gap-2 group">
                     Get In Touch
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg style="width: 16px; height: 16px; flex-shrink: 0;"
+                        class="transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
