@@ -97,80 +97,122 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderPage(num, direction = 'initial') {
         pageRendering = true;
 
-        pdfDoc.getPage(num).then(page => {
-            // Determine scale based on viewport to make it responsive
-            const unscaledViewport = page.getViewport({ scale: 1 });
-            const containerWidth = canvasContainer.clientWidth;
-            const containerHeight = canvasContainer.clientHeight;
+        const isSpreadMode = window.innerWidth >= 1024;
+        let displayNum = num;
+        let pagesToRender = [];
 
-            // We want it to fit inside the screen comfortably
-            const scaleX = (containerWidth - 40) / unscaledViewport.width;
-            const scaleY = (containerHeight - 40) / unscaledViewport.height;
-            const scale = Math.min(scaleX, scaleY, 2.5); // Cap scale at 2.5 for crispness, but fit screen
-
-            const viewport = page.getViewport({ scale: scale });
-
-            // Create new canvas for crossfade animation
-            const newCanvas = document.createElement('canvas');
-            const ctx = newCanvas.getContext('2d');
-            newCanvas.height = viewport.height;
-            newCanvas.width = viewport.width;
-            newCanvas.className = 'pdf-canvas entering';
-
-            // Set animation direction
-            if (direction === 'next') {
-                newCanvas.classList.add('slide-in-right');
-            } else if (direction === 'prev') {
-                newCanvas.classList.add('slide-in-left');
+        // Determine which pages construct this view
+        if (isSpreadMode) {
+            if (displayNum === 1) {
+                pagesToRender = [1];
             } else {
-                newCanvas.classList.add('fade-in');
+                if (displayNum % 2 !== 0) displayNum--;
+                pagesToRender = [displayNum];
+                if (displayNum + 1 <= pdfDoc.numPages) {
+                    pagesToRender.push(displayNum + 1);
+                }
+            }
+        } else {
+            pagesToRender = [displayNum];
+        }
+
+        currentPage = displayNum; // Sync current page tracker
+
+        // Create Spread Wrapper
+        const spreadDiv = document.createElement('div');
+        spreadDiv.className = 'pdf-spread entering';
+
+        if (direction === 'next') {
+            spreadDiv.classList.add('slide-in-right');
+        } else if (direction === 'prev') {
+            spreadDiv.classList.add('slide-in-left');
+        } else {
+            spreadDiv.classList.add('fade-in');
+        }
+
+        // Render all requested pages into canvases
+        Promise.all(pagesToRender.map(pageNumToRender => {
+            return pdfDoc.getPage(pageNumToRender).then(page => {
+                const unscaledViewport = page.getViewport({ scale: 1 });
+                const containerWidth = canvasContainer.clientWidth;
+                const containerHeight = canvasContainer.clientHeight;
+
+                // Split available width for 2 pages if rendering a spread pair
+                const availableWidth = pagesToRender.length === 2 ? (containerWidth - 60) / 2 : (containerWidth - 40);
+
+                const scaleX = availableWidth / unscaledViewport.width;
+                const scaleY = (containerHeight - 40) / unscaledViewport.height;
+                const scale = Math.min(scaleX, scaleY, 2.5);
+
+                const viewport = page.getViewport({ scale: scale });
+
+                const newCanvas = document.createElement('canvas');
+                const ctx = newCanvas.getContext('2d');
+                newCanvas.height = viewport.height;
+                newCanvas.width = viewport.width;
+
+                // Add specific page classes for the center crease styling
+                let extraClass = '';
+                if (pagesToRender.length === 2) {
+                    extraClass = pageNumToRender % 2 === 0 ? ' left-page' : ' right-page';
+                }
+                newCanvas.className = 'pdf-spread-canvas' + extraClass;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                return page.render(renderContext).promise.then(() => newCanvas);
+            });
+        })).then(canvases => {
+            pageRendering = false;
+
+            canvases.forEach(c => spreadDiv.appendChild(c));
+
+            // Swap out old spread view
+            if (currentCanvas) {
+                const oldSpread = currentCanvas;
+                oldSpread.classList.add('leaving');
+                oldSpread.classList.remove('entering', 'slide-in-right', 'slide-in-left', 'fade-in');
+
+                setTimeout(() => {
+                    if (oldSpread.parentNode) {
+                        oldSpread.parentNode.removeChild(oldSpread);
+                    }
+                }, 400);
             }
 
-            const renderContext = {
-                canvasContext: ctx,
-                viewport: viewport
-            };
+            canvasContainer.appendChild(spreadDiv);
+            void spreadDiv.offsetWidth;
+            spreadDiv.classList.remove('entering');
+            currentCanvas = spreadDiv;
 
-            const renderTask = page.render(renderContext);
-
-            renderTask.promise.then(() => {
-                pageRendering = false;
-
-                // Swap canvases for smooth transition
-                if (currentCanvas) {
-                    const oldCanvas = currentCanvas;
-                    oldCanvas.classList.add('leaving');
-                    oldCanvas.classList.remove('entering', 'slide-in-right', 'slide-in-left', 'fade-in');
-
-                    setTimeout(() => {
-                        if (oldCanvas.parentNode) {
-                            oldCanvas.parentNode.removeChild(oldCanvas);
-                        }
-                    }, 400); // Wait for transition to finish
-                }
-
-                canvasContainer.appendChild(newCanvas);
-
-                // Trigger reflow to start fade
-                void newCanvas.offsetWidth;
-                newCanvas.classList.remove('entering');
-                currentCanvas = newCanvas;
-
-                if (pageNumPending !== null) {
-                    renderPage(pageNumPending, direction);
-                    pageNumPending = null;
-                }
-            });
+            if (pageNumPending !== null) {
+                renderPage(pageNumPending, direction);
+                pageNumPending = null;
+            }
+        }).catch(err => {
+            console.error("Error rendering spread", err);
+            pageRendering = false;
         });
 
-        pageNum.textContent = num;
+        // Update UI Text
+        if (pagesToRender.length === 1) {
+            pageNum.textContent = pagesToRender[0];
+        } else {
+            pageNum.textContent = pagesToRender[0] + ' - ' + pagesToRender[1];
+        }
+
+        const firstPage = pagesToRender[0];
+        const lastPage = pagesToRender[pagesToRender.length - 1];
 
         // Update button states
-        btnPrev.style.opacity = num <= 1 ? '0.3' : '1';
-        btnPrev.style.pointerEvents = num <= 1 ? 'none' : 'auto';
+        btnPrev.style.opacity = firstPage <= 1 ? '0.3' : '1';
+        btnPrev.style.pointerEvents = firstPage <= 1 ? 'none' : 'auto';
 
-        btnNext.style.opacity = num >= pdfDoc.numPages ? '0.3' : '1';
-        btnNext.style.pointerEvents = num >= pdfDoc.numPages ? 'none' : 'auto';
+        btnNext.style.opacity = lastPage >= pdfDoc.numPages ? '0.3' : '1';
+        btnNext.style.pointerEvents = lastPage >= pdfDoc.numPages ? 'none' : 'auto';
     }
 
     function queueRenderPage(num, direction) {
@@ -183,14 +225,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function onPrevPage() {
         if (currentPage <= 1 || pageRendering) return;
-        currentPage--;
-        queueRenderPage(currentPage, 'prev');
+
+        let nextPage = currentPage;
+        const isSpreadMode = window.innerWidth >= 1024;
+
+        if (isSpreadMode) {
+            if (currentPage === 2 || currentPage === 3) nextPage = 1;
+            else nextPage = currentPage - 2;
+        } else {
+            nextPage = currentPage - 1;
+        }
+
+        queueRenderPage(nextPage, 'prev');
     }
 
     function onNextPage() {
         if (currentPage >= pdfDoc.numPages || pageRendering) return;
-        currentPage++;
-        queueRenderPage(currentPage, 'next');
+
+        let nextPage = currentPage;
+        const isSpreadMode = window.innerWidth >= 1024;
+
+        if (isSpreadMode) {
+            if (currentPage === 1) nextPage = 2;
+            else nextPage = currentPage + 2;
+        } else {
+            nextPage = currentPage + 1;
+        }
+
+        if (nextPage > pdfDoc.numPages) nextPage = pdfDoc.numPages;
+
+        queueRenderPage(nextPage, 'next');
     }
 
     // Handle Window Resize
