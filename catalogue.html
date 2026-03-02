@@ -46,6 +46,7 @@
         href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Montserrat:wght@400;500;700&display=swap"
         rel="stylesheet">
     <script src="assets/js/components.js?v=6?v=2" defer></script>
+    <script src="assets/js/pdf-viewer.js" defer></script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -73,6 +74,66 @@
                 <p class="mt-4 max-w-3xl mx-auto text-lg leading-relaxed">Each colour tells a story of transformation.
                     Explore our collections below, sorted by the plastic they were born from, and discover the unique
                     beauty hidden within discarded waste.</p>
+            </div>
+        </section>
+
+        <!-- Featured Catalog Hero -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/2 flex justify-center">
+                        <div class="relative group cursor-pointer" id="btn-read-online">
+                            <!-- Cover Image -->
+                            <img src="assets/images/catalogue/catalog_cover.png" alt="2026 Product Catalog Cover"
+                                class="rounded-xl shadow-2xl max-w-sm w-full transition-transform duration-300 group-hover:scale-105 group-hover:shadow-3xl">
+                            <!-- Overlay Play Button for clarity -->
+                            <div
+                                class="absolute inset-0 bg-deep-ocean/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="bg-white text-lagoon-teal rounded-full p-4 shadow-xl">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+                        <span
+                            class="inline-block text-hermit-orange font-bold text-sm uppercase tracking-widest mb-3">Our
+                            Complete Collection</span>
+                        <h2 class="font-heading text-3xl md:text-4xl font-bold text-deep-ocean mb-4">2026 Product
+                            Catalog</h2>
+                        <p class="text-lg text-deep-ocean/70 leading-relaxed mb-8">
+                            Browse the full range of our upcycled creations, read the stories behind each piece, and
+                            learn how we transform discarded plastic into sustainable wonder.
+                        </p>
+                        <div
+                            class="flex flex-col sm:flex-row items-center md:items-start gap-4 justify-center md:justify-start">
+                            <button id="btn-read-online-2" class="btn-primary flex items-center gap-2"
+                                onclick="document.getElementById('btn-read-online').click()">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                    </path>
+                                </svg>
+                                Read Online
+                            </button>
+                            <a href="Rashu Plastic Project 2026 Product Catalog.pdf" download
+                                class="group flex items-center gap-2 px-6 py-3 border-2 border-deep-ocean/20 text-deep-ocean font-semibold rounded-full hover:border-lagoon-teal hover:text-lagoon-teal transition-colors">
+                                <svg class="w-5 h-5 transition-transform group-hover:-translate-y-1" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Download PDF (20MB)
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -390,6 +451,37 @@
             });
         });
     </script>
+
+    <!-- Interactive PDF Viewer Modal -->
+    <div id="pdf-modal" class="pdf-modal">
+        <div class="pdf-modal-backdrop absolute inset-0"></div>
+        <div class="pdf-modal-header">
+            <button id="pdf-close" class="pdf-close-btn" aria-label="Close Viewer">×</button>
+        </div>
+
+        <div class="pdf-viewer-container">
+            <div id="pdf-loader" class="pdf-loader">Loading Catalogue...</div>
+            <div id="pdf-canvas-container" class="pdf-canvas-wrapper w-full h-full max-w-5xl mx-auto relative">
+                <!-- Canvas elements injected here by JS -->
+            </div>
+        </div>
+
+        <div class="pdf-controls">
+            <button id="pdf-prev" class="pdf-btn" aria-label="Previous Page">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <span class="pdf-counter">
+                <span id="pdf-page-num">1</span> / <span id="pdf-page-count">--</span>
+            </span>
+            <button id="pdf-next" class="pdf-btn" aria-label="Next Page">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
 </body>
 
 </html>

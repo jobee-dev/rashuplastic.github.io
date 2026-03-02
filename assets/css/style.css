@@ -2837,3 +2837,200 @@ main {
         font-size: 1rem;
     }
 }
+
+/* =========================================
+   PDF Viewer Modal
+========================================= */
+
+.pdf-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    background-color: rgba(6, 33, 44, 0.95);
+    /* deep-ocean */
+    backdrop-filter: blur(8px);
+    display: none;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pdf-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.pdf-modal-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.pdf-close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.5rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.pdf-close-btn:hover {
+    opacity: 1;
+}
+
+.pdf-viewer-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 20px;
+}
+
+.pdf-canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-canvas {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
+    border-radius: 4px;
+    /* subtle soft edge on the paper */
+}
+
+/* Smooth Page Turn Animations */
+.pdf-canvas.slide-in-right {
+    animation: pdfSlideInRight 0.4s ease-out forwards;
+}
+
+.pdf-canvas.slide-in-left {
+    animation: pdfSlideInLeft 0.4s ease-out forwards;
+}
+
+.pdf-canvas.fade-in {
+    animation: pdfFadeIn 0.3s ease-out forwards;
+}
+
+.pdf-canvas.leaving {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+@keyframes pdfSlideInRight {
+    0% {
+        transform: translateX(50px) rotateY(10deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pdfSlideInLeft {
+    0% {
+        transform: translateX(-50px) rotateY(-10deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pdfFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.pdf-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    gap: 1.5rem;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.pdf-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.pdf-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.pdf-counter {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.pdf-loader {
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
