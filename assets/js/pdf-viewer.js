@@ -148,8 +148,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const newCanvas = document.createElement('canvas');
                 const ctx = newCanvas.getContext('2d');
-                newCanvas.height = viewport.height;
-                newCanvas.width = viewport.width;
+
+                // Handle High-DPI (Retina) Displays for sharp rendering on mobile
+                const outputScale = window.devicePixelRatio || 1;
+                newCanvas.width = Math.floor(viewport.width * outputScale);
+                newCanvas.height = Math.floor(viewport.height * outputScale);
+                newCanvas.style.width = Math.floor(viewport.width) + "px";
+                newCanvas.style.height = Math.floor(viewport.height) + "px";
+
+                const transform = outputScale !== 1
+                    ? [outputScale, 0, 0, outputScale, 0, 0]
+                    : null;
 
                 // Add specific page classes for the center crease styling
                 let extraClass = '';
@@ -160,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const renderContext = {
                     canvasContext: ctx,
+                    transform: transform,
                     viewport: viewport
                 };
 
