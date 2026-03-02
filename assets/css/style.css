@@ -516,12 +516,17 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    color: #2A3D45;
+    border-bottom: 1px solid rgba(42, 61, 69, 0.1);
     background: none;
-    border: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     cursor: pointer;
-    padding: 0;
 }
 
 .mobile-dropdown-trigger svg,
@@ -538,15 +543,27 @@ body {
 
 .mobile-dropdown-content {
     display: none;
+    background: rgba(66, 158, 157, 0.04);
 }
 
 .mobile-dropdown-content.open {
     display: block;
 }
 
+.mobile-dropdown-content a {
+    display: block;
+    padding: 0.625rem 2.75rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: rgba(42, 61, 69, 0.85);
+    border-bottom: 1px solid rgba(42, 61, 69, 0.05);
+    transition: all 0.2s ease;
+}
+
 .mobile-dropdown-content a:hover {
     color: #429E9D;
-    padding-left: 2.75rem;
+    padding-left: 3rem;
+    background-color: rgba(66, 158, 157, 0.08);
 }
 
 /* --- SUPPORTED BY / PARTNER BANNER --- */
