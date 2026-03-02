@@ -191,6 +191,10 @@
 
                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                     .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Request failed with status ${response.status}`);
+                        }
+
                         formResult.innerHTML = `<div style="background-color: #d1fae5; color: #065f46; padding: 1rem; border-radius: 0.5rem;">Thank you! Your message has been sent successfully.</div>`;
                         formResult.classList.remove('hidden');
                         form.reset();
